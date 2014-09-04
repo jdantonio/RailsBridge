@@ -1,10 +1,9 @@
-<h1>Listing topics</h1>
+<h1>Listing Topics</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,8 +11,7 @@
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= topic.title %></td>
-        <td><%= topic.description %></td>
+        <td><%= link_to topic.title, topic %></td>
         <td><%= pluralize(topic.votes.count, "vote") %></td>
         <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>resources :topics
         <td><%= link_to 'Show', topic %></td>
