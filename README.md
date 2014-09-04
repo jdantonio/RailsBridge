@@ -12,6 +12,10 @@ as possible. Specifically, this means:
 * Using immutable collections from the [Hamster](https://github.com/hamstergem/hamster) gem
 * Programming client-side code in [PureScript](http://www.purescript.org/)
 
+## Versions
+
+* 1.0.0 -- Completed the [RailsBridge Intro To Rails](http://docs.railsbridge.org/intro-to-rails/) tutorials verbatim.
+
 ## License and Copyright
 
 This repo is free software released under the [MIT License](http://www.opensource.org/licenses/MIT).
