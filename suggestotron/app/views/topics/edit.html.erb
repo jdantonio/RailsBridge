@@ -1,6 +1,11 @@
 <h1>Editing Topic</h1>
 
-<%= render 'form' %>
+<%= form_tag({controller: 'topics', action: 'update'}, method: 'put') do %>
+  <%= render 'form' %>
+  <div class="actions">
+    <%= submit_tag('Update Topic') %>
+  </div>
+<% end %>
 
-<%= link_to 'Show', @topic %> |
+<%= link_to 'Show', topic_path(@topic.id) %> |
 <%= link_to 'Back', topics_path %>

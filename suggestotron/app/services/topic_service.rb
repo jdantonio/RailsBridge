@@ -1,10 +1,6 @@
 require 'functional'
 require 'hamster'
 
-TopicRecord = Functional::Record.new(
-  :id, :title, :description, :created_at, :updated_at
-)
-
 module TopicService
   extend self
 

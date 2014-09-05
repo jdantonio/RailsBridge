@@ -1,3 +1,6 @@
+require 'ostruct'
+require 'functional'
+
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit]
 
@@ -14,7 +17,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    @topic = TopicRecord.new
+    @topic = OpenStruct.new
   end
 
   # GET /topics/1/edit
@@ -31,6 +34,8 @@ class TopicsController < ApplicationController
         format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
         format.json { render action: 'show', status: :created, location: result.value }
       else
+        @topic = Functional::ValueStruct.new(topic_params)
+        @errors = result.reason
         format.html { render action: 'new' }
         format.json { render json: result.reason, status: :unprocessable_entity }
       end
@@ -47,6 +52,8 @@ class TopicsController < ApplicationController
         format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }
         format.json { render :show, status: :ok, location: result.value }
       else
+        @topic = Functional::ValueStruct.new(topic_params.merge(id: topic_id))
+        @errors = result.reason
         format.html { render :edit }
         format.json { render json: result.reason, status: :unprocessable_entity }
       end
