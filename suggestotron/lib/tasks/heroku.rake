@@ -22,4 +22,18 @@ namespace :heroku do
     #  instead, pipe it through sh
     puts "heroku open --app #{HEROKU_APP}"
   end
+
+  desc "View logs for #{RAILS_APP} on Heroku #{HEROKU_APP}"
+  task :logs do
+    #NOTE: Running this from w/i rake has bundler issues
+    #  instead, pipe it through sh
+    puts "heroku logs --app #{HEROKU_APP}"
+  end
+
+  #desc "Reset the database for #{RAILS_APP} on Heroku #{HEROKU_APP}"
+  #task :reset do
+    ##NOTE: Running this from w/i rake has bundler issues
+    ##  instead, pipe it through sh
+    #puts "heroku pg:reset DATABASE_URL --app #{HEROKU_APP}"
+  #end
 end
