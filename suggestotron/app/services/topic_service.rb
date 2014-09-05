@@ -8,12 +8,16 @@ TopicRecord = Functional::Record.new(
 module TopicService
   extend self
 
-  def all_topics
+  def all_topics_with_votes
     Topic.includes(:votes).reduce(Hamster.vector) do |memo, topic|
       memo.add(
         Functional::ValueStruct.new(topic.attributes.merge(vote_count: topic.votes.count))
       )
     end
+  end
+
+  def find_by_id(id)
+    Functional::ValueStruct.new(Topic.find(id).attributes)
   end
 
   def create_topic(attributes = {})

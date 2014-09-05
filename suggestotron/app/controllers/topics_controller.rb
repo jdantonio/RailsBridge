@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = TopicService.all_topics
+    @topics = TopicService.all_topics_with_votes
   end
 
   # GET /topics/1
@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    @topic = Topic.new
+    @topic = TopicRecord.new
   end
 
   # GET /topics/1/edit
@@ -72,7 +72,7 @@ class TopicsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_topic
-    @topic = Topic.find(params[:id])
+    @topic = TopicService.find_by_id(topic_id)
   end
 
   def topic_id
