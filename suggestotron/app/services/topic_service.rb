@@ -1,15 +1,14 @@
 require 'functional'
-require 'hamster'
 
 module TopicService
   extend self
 
-  def all_topics_with_votes
-    Topic.includes(:votes).reduce(Hamster.vector) do |memo, topic|
-      memo.add(
-        Functional::ValueStruct.new(topic.attributes.merge(vote_count: topic.votes.count))
-      )
+  def all_topics_by_vote_count
+    topics = Topic.includes(:votes).reduce([]) do |memo, topic|
+      memo << Functional::ValueStruct.new(topic.attributes.merge(vote_count: topic.votes.count))
     end
+    topics.sort!{|a, b| b.vote_count <=> a.vote_count }
+    Functional::Tuple.new(topics)
   end
 
   def find_by_id(id)

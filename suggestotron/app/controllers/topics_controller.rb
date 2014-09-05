@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
 
   # GET /topics
   def index
-    @topics = TopicService.all_topics_with_votes
+    @topics = TopicService.all_topics_by_vote_count
   end
 
   # GET /topics/1
