@@ -13,7 +13,7 @@
       <tr>
         <td><%= link_to topic.title, topic_path(topic.id) %></td>
         <td><%= pluralize(topic.vote_count, 'vote') %></td>
-        <td><%= button_to '+1', upvote_topic_path(topic.id), method: :post %></td>resources :topics
+        <td><%= button_to '+1', upvote_topic_path(topic.id), method: :post %></td>
         <td><%= link_to 'Delete', topic_path(topic.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

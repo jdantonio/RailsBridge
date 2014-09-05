@@ -41,9 +41,9 @@ module TopicService
     false
   end
 
-  def upvote_topic(id)
-    topic = Topic.find(id)
-    topic.votes.create
+  def upvote_topic(user_id, topic_id)
+    topic = Topic.find(topic_id)
+    topic.votes.create(user_id: user_id)
     Functional::Either.value(topic.votes.count)
   rescue => ex
     Functional::Either.reason(ex.message)

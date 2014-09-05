@@ -1,7 +1,7 @@
 require 'functional'
 
 class TopicsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_topic, only: [:show, :edit]
 
   # GET /topics
@@ -54,8 +54,9 @@ class TopicsController < ApplicationController
     redirect_to topics_url, notice: 'Topic was successfully destroyed.'
   end
 
+  # POST /topics/1/upvote
   def upvote
-    result = TopicService.upvote_topic(topic_id)
+    result = TopicService.upvote_topic(current_user.id, topic_id)
     redirect_to(topics_path, notice: result.reason)
   end
 
