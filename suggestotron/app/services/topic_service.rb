@@ -19,21 +19,21 @@ module TopicService
   def create_topic(attributes = {})
     topic = Topic.new(attributes)
     if topic.save
-      Functional::Either.value(topic.freeze)
+      Functional::Either.value(Functional::ValueStruct.new(topic.attributes))
     else
-      Functional::Either.reason(Hamster.vector(*topic.errors))
+      Functional::Either.reason(Functional::Tuple.new(topic.errors))
     end
   end
 
   def update_topic(id, attributes = {})
     topic = Topic.find(id)
     if topic.update(attributes)
-      Functional::Either.value(topic.freeze)
+      Functional::Either.value(Functional::ValueStruct.new(topic.attributes))
     else
-      Functional::Either.reason(Hamster.vector(*topic.errors))
+      Functional::Either.reason(Functional::Tuple.new(topic.errors))
     end
   rescue ActiveRecord::RecordNotFound => ex
-    Functional::Either.reason(Hamster.vector(ex.message))
+    Functional::Either.reason(Functional::Tuple.new([ex.message]))
   end
 
   def delete_topic(id)

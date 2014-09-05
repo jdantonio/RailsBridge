@@ -1,4 +1,3 @@
-require 'ostruct'
 require 'functional'
 
 class TopicsController < ApplicationController
@@ -15,7 +14,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    @topic = OpenStruct.new
+    @topic = Functional::FinalStruct.new
   end
 
   # GET /topics/1/edit

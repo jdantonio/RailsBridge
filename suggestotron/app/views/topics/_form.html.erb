@@ -1,6 +1,6 @@
 <% if @errors %>
   <div id="error_explanation">
-    <h2><%= pluralize(@errors.count, 'error') %> prohibited this topic from being saved:</h2>
+    <h2><%= pluralize(@errors.length, 'error') %> prohibited this topic from being saved:</h2>
 
     <ul>
     <% @errors.each do |message| %>
