@@ -60,6 +60,12 @@ class TopicsController < ApplicationController
     redirect_to(topics_path, notice: result.reason)
   end
 
+  # POST /topics/1/downvote
+  def downvote
+    result = TopicService.downvote_topic(current_user.id, topic_id)
+    redirect_to(topics_path, notice: result.reason)
+  end
+
   private
 
   def topic_for_form(other_params = {})

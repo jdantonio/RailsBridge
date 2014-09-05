@@ -4,16 +4,19 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
+    <p id="notice"><%= notice %></p>
     <% @topics.each do |topic| %>
       <tr>
         <td><%= link_to topic.title, topic_path(topic.id) %></td>
         <td><%= pluralize(topic.vote_count, 'vote') %></td>
+        <td>(<%= topic.up - topic.down %>)</td>
         <td><%= button_to '+1', upvote_topic_path(topic.id), method: :post %></td>
+        <td><%= button_to '-1', downvote_topic_path(topic.id), method: :post %></td>
         <td><%= link_to 'Delete', topic_path(topic.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
