@@ -16,6 +16,7 @@ as possible. Specifically, this means:
 
 * 1.0.0 -- Completed the [RailsBridge Intro To Rails](http://docs.railsbridge.org/intro-to-rails/) tutorials verbatim.
 * 1.1.0 -- Completed the Intro To Rails [Extra Credit](http://docs.railsbridge.org/intro-to-rails/credits_and_next_steps) in a functional style.
+* 1.2.0 -- Completed the [RailsBridge Intro To Rails](http://docs.railsbridge.org/intro-to-rails/) using [RethinkDB](http://www.rethinkdb.com/) instead of an RDBMS.
 
 ## License and Copyright
 
