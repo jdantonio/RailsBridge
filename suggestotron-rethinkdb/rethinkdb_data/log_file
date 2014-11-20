@@ -1,0 +1,29 @@
+2014-11-19T14:37:25.892864000 0.003416s info: Initializing directory /Users/Jerry/Projects/katas/RailsBridge/suggestotron-rethinkdb/rethinkdb_data
+2014-11-19T14:37:25.892987000 0.003540s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/Jerry/Projects/katas/RailsBridge/suggestotron-rethinkdb/rethinkdb_data' did not already exist or is empty.)
+2014-11-19T14:37:25.893034000 0.003586s info: Running rethinkdb 1.15.0-1 (CLANG 6.0 (clang-600.0.51))...
+2014-11-19T14:37:25.896131000 0.006683s info: Running on Darwin 13.4.0 x86_64
+2014-11-19T14:37:25.896167000 0.006720s info: Using cache size of 1400 MB
+2014-11-19T14:37:25.896194000 0.006746s info: Loading data from directory /Users/Jerry/Projects/katas/RailsBridge/suggestotron-rethinkdb/rethinkdb_data
+2014-11-19T14:37:26.016063000 0.126615s info: Listening for intracluster connections on port 29015
+2014-11-19T14:37:26.016992000 0.127545s info: Listening for client driver connections on port 28015
+2014-11-19T14:37:26.017077000 0.127630s info: Listening for administrative HTTP connections on port 8080
+2014-11-19T14:37:26.017087000 0.127640s info: Listening on addresses: 127.0.0.1, ::1
+2014-11-19T14:37:26.017098000 0.127651s info: To fully expose RethinkDB on the network, bind to all addresses
+2014-11-19T14:37:26.017113000 0.127666s info: by running rethinkdb with the `--bind all` command line option.
+2014-11-19T14:37:26.017129000 0.127681s info: Server ready
+2014-11-19T14:45:34.216407000 488.318586s info: Server got SIGINT from pid 530, uid 501; shutting down...
+2014-11-19T14:45:34.216723000 488.318902s info: Shutting down client connections...
+2014-11-19T14:45:34.217104000 488.319282s info: All client connections closed.
+2014-11-19T14:45:34.217112000 488.319290s info: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2014-11-19T14:45:34.220923000 488.323101s info: Storage engine shut down.
+2014-11-19T15:42:00.136744000 0.466072s info: Running rethinkdb 1.15.0-1 (CLANG 6.0 (clang-600.0.51))...
+2014-11-19T15:42:00.141880000 0.471209s info: Running on Darwin 13.4.0 x86_64
+2014-11-19T15:42:00.142423000 0.471752s info: Using cache size of 1863 MB
+2014-11-19T15:42:00.142469000 0.471797s info: Loading data from directory /Users/Jerry/Projects/katas/RailsBridge/suggestotron-rethinkdb/rethinkdb_data
+2014-11-19T15:42:00.160414000 0.489742s info: Listening for intracluster connections on port 29015
+2014-11-19T15:42:00.163555000 0.492884s info: Listening for client driver connections on port 28015
+2014-11-19T15:42:00.163690000 0.493018s info: Listening for administrative HTTP connections on port 8080
+2014-11-19T15:42:00.163704000 0.493032s info: Listening on addresses: 127.0.0.1, ::1
+2014-11-19T15:42:00.163705000 0.493033s info: To fully expose RethinkDB on the network, bind to all addresses
+2014-11-19T15:42:00.163713000 0.493041s info: by running rethinkdb with the `--bind all` command line option.
+2014-11-19T15:42:00.163722000 0.493050s info: Server ready
