@@ -28,10 +28,10 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render :show, status: :created, location: @topic }
+        format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @topic }
       else
-        format.html { render :new }
+        format.html { render action: 'new' }
         format.json { render json: @topic.errors, status: :unprocessable_entity }
       end
     end
@@ -42,7 +42,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+        format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }
         format.json { render :show, status: :ok, location: @topic }
       else
         format.html { render :edit }
@@ -68,13 +68,13 @@ class TopicsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_topic
-      @topic = Topic.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_topic
+    @topic = Topic.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def topic_params
-      params.require(:topic).permit(:title, :description)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def topic_params
+    params.require(:topic).permit(:title, :description)
+  end
 end
